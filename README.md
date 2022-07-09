@@ -21,8 +21,9 @@
 	Deployment is not supported quite yet.
 	
 	But! Here's what happens:
-		All files in the assets folder (recursively) are compiled into a custom format by the engine's asset compiler.
-		*Everything* is compiled in so you'll want to keep Work In Progress stuff in a separate folder.
+		All files in the assets folder (recursively) are compiled into a custom format by the engine's
+		asset compiler.	*Everything* is compiled in so you'll want to keep Work In Progress stuff in a
+		separate folder.
 		
 		The game needs to built from C++ code, linked against the Mustard release-mode static library,
 		and it needs to load the asset library.
