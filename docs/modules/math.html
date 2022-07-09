@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Mustard Engine</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/audio.html">audio</a></li>
+  <li><a href="../modules/callbacks.html">callbacks</a></li>
+  <li><a href="../modules/collision.html">collision</a></li>
+  <li><a href="../modules/font.html">font</a></li>
+  <li><a href="../modules/graphics.html">graphics</a></li>
+  <li><a href="../modules/input.html">input</a></li>
+  <li><a href="../modules/localization.html">localization</a></li>
+  <li><strong>math</strong></li>
+  <li><a href="../modules/system.html">system</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>math</code></h1>
+<p>Pseudo-random number generation and Perlin noise functions</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#AB.math.randomSeed">AB.math.randomSeed (seed)</a></td>
+	<td class="summary">Seeds the pseudo-random number generator</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.math.random">AB.math.random ()</a></td>
+	<td class="summary">Generates a random floating point number</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.math.random">AB.math.random (upperBound)</a></td>
+	<td class="summary">Generates a random integer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.math.random">AB.math.random (lowerBound, upperBound)</a></td>
+	<td class="summary">Generates a random integer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.math.noiseSeed">AB.math.noiseSeed (seed)</a></td>
+	<td class="summary">Seeds the Perlin noise generator</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.math.noise">AB.math.noise (x, y, z, octaves, persistence)</a></td>
+	<td class="summary">Generates Perlin noise</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "AB.math.randomSeed"></a>
+    <strong>AB.math.randomSeed (seed)</strong>
+    </dt>
+    <dd>
+    Seeds the pseudo-random number generator
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">seed</span>
+         (optional) Seeds the PRNG for deterministic ouput
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.math.random"></a>
+    <strong>AB.math.random ()</strong>
+    </dt>
+    <dd>
+    Generates a random floating point number
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        A random floating point number [0..1]
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.math.random"></a>
+    <strong>AB.math.random (upperBound)</strong>
+    </dt>
+    <dd>
+    Generates a random integer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">upperBound</span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        A random integer [1..upperBound]
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.math.random"></a>
+    <strong>AB.math.random (lowerBound, upperBound)</strong>
+    </dt>
+    <dd>
+    Generates a random integer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">lowerBound</span>
+
+        </li>
+        <li><span class="parameter">upperBound</span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        A random integer [lowerBound..upperBound]
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.math.noiseSeed"></a>
+    <strong>AB.math.noiseSeed (seed)</strong>
+    </dt>
+    <dd>
+    Seeds the Perlin noise generator
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">seed</span>
+         (optional) Seeds the Perlin noise generator for deterministic ouput
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.math.noise"></a>
+    <strong>AB.math.noise (x, y, z, octaves, persistence)</strong>
+    </dt>
+    <dd>
+    Generates Perlin noise
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+         X-coordinate
+        </li>
+        <li><span class="parameter">y</span>
+         Y-coordinate
+        </li>
+        <li><span class="parameter">z</span>
+         Z-coordinate
+        </li>
+        <li><span class="parameter">octaves</span>
+         Octaves
+        </li>
+        <li><span class="parameter">persistence</span>
+         Persistence
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        noise
+    </ol>
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2022-07-09 15:15:59 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

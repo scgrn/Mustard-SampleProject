@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Mustard Engine</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/audio.html">audio</a></li>
+  <li><a href="../modules/callbacks.html">callbacks</a></li>
+  <li><a href="../modules/collision.html">collision</a></li>
+  <li><a href="../modules/font.html">font</a></li>
+  <li><a href="../modules/graphics.html">graphics</a></li>
+  <li><a href="../modules/input.html">input</a></li>
+  <li><a href="../modules/localization.html">localization</a></li>
+  <li><a href="../modules/math.html">math</a></li>
+  <li><strong>system</strong></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>system</code></h1>
+<p>System functions</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#AB.system.log">AB.system.log (message)</a></td>
+	<td class="summary">Writes a message to the log</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.system.loadScript">AB.system.loadScript (filename)</a></td>
+	<td class="summary">Loads and executes a script</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.system.loadData">AB.system.loadData (key)</a></td>
+	<td class="summary">Loads string from file</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.system.saveData">AB.system.saveData (key, value, compile)</a></td>
+	<td class="summary">Saves string to file</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.system.getTime">AB.system.getTime ()</a></td>
+	<td class="summary">Gets milliseconds since program start</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.system.resync">AB.system.resync ()</a></td>
+	<td class="summary">Resynchronise engine timing.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.system.openURL">AB.system.openURL (URL)</a></td>
+	<td class="summary">Opens a URL in the system's default browser</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.system.getOS">AB.system.getOS ()</a></td>
+	<td class="summary">Returns the current operating system</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.system.debugMode">AB.system.debugMode ()</a></td>
+	<td class="summary">Checks if engine is running in debug mode</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.system.quit">AB.system.quit ()</a></td>
+	<td class="summary">Exits the program</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "AB.system.log"></a>
+    <strong>AB.system.log (message)</strong>
+    </dt>
+    <dd>
+    Writes a message to the log
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">message</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.system.loadScript"></a>
+    <strong>AB.system.loadScript (filename)</strong>
+    </dt>
+    <dd>
+    Loads and executes a script
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filename</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.system.loadData"></a>
+    <strong>AB.system.loadData (key)</strong>
+    </dt>
+    <dd>
+    Loads string from file
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        data
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.system.saveData"></a>
+    <strong>AB.system.saveData (key, value, compile)</strong>
+    </dt>
+    <dd>
+    Saves string to file
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+
+        </li>
+        <li><span class="parameter">value</span>
+
+        </li>
+        <li><span class="parameter">compile</span>
+         (false) obfuscates by compiling to Lua bytecode
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.system.getTime"></a>
+    <strong>AB.system.getTime ()</strong>
+    </dt>
+    <dd>
+    Gets milliseconds since program start
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.system.resync"></a>
+    <strong>AB.system.resync ()</strong>
+    </dt>
+    <dd>
+    Resynchronise engine timing.  Good to call after long-running operations
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.system.openURL"></a>
+    <strong>AB.system.openURL (URL)</strong>
+    </dt>
+    <dd>
+    Opens a URL in the system's default browser
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">URL</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.system.getOS"></a>
+    <strong>AB.system.getOS ()</strong>
+    </dt>
+    <dd>
+    Returns the current operating system
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        OS string
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.system.debugMode"></a>
+    <strong>AB.system.debugMode ()</strong>
+    </dt>
+    <dd>
+    Checks if engine is running in debug mode
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+        debugMode
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.system.quit"></a>
+    <strong>AB.system.quit ()</strong>
+    </dt>
+    <dd>
+    Exits the program
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2022-07-09 15:15:59 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

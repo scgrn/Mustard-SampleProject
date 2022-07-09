@@ -1,0 +1,655 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Mustard Engine</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/audio.html">audio</a></li>
+  <li><strong>callbacks</strong></li>
+  <li><a href="../modules/collision.html">collision</a></li>
+  <li><a href="../modules/font.html">font</a></li>
+  <li><a href="../modules/graphics.html">graphics</a></li>
+  <li><a href="../modules/input.html">input</a></li>
+  <li><a href="../modules/localization.html">localization</a></li>
+  <li><a href="../modules/math.html">math</a></li>
+  <li><a href="../modules/system.html">system</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>callbacks</code></h1>
+<p>These are called from the engine during the main loop or when system events occur</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#AB.loadConfig">AB.loadConfig ()</a></td>
+	<td class="summary">Load configuration.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.init">AB.init ()</a></td>
+	<td class="summary">Called once before the main loop is entered.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.update">AB.update ()</a></td>
+	<td class="summary">Updates logic.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.render">AB.render ()</a></td>
+	<td class="summary">Renders graphics</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onToggleFullscreen">AB.onToggleFullscreen ()</a></td>
+	<td class="summary">Called when fullscreen mode is toggled</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onFocusLost">AB.onFocusLost ()</a></td>
+	<td class="summary">Called when application focus is lost</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onFocusGained">AB.onFocusGained ()</a></td>
+	<td class="summary">Called when application focus is gained</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onWindowClose">AB.onWindowClose ()</a></td>
+	<td class="summary">Called when application window is closed</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onKeyPressed">AB.onKeyPressed (key)</a></td>
+	<td class="summary">Called when a key is pressed</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onKeyReleased">AB.onKeyReleased (key)</a></td>
+	<td class="summary">Called when a key is released</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onBackPressed">AB.onBackPressed ()</a></td>
+	<td class="summary">Called when back is pressed on mobile (or Esc on desktop/web)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onTouchPressed">AB.onTouchPressed (index, x, y)</a></td>
+	<td class="summary">Called when screen is touched on mobile</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onTouchReleased">AB.onTouchReleased (index, x, y)</a></td>
+	<td class="summary">Called when screen is released on mobile</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onTouchMoved">AB.onTouchMoved (index, x, y)</a></td>
+	<td class="summary">Called when a screen press is moved on mobile</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onMousePressed">AB.onMousePressed (index, x, y)</a></td>
+	<td class="summary">Called when a mouse button is pressed</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onMouseReleased">AB.onMouseReleased (index, x, y)</a></td>
+	<td class="summary">Called when a mouse button is released</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onMouseMoved">AB.onMouseMoved (x, y)</a></td>
+	<td class="summary">Called when the mouse is moved</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onMouseWheelMoved">AB.onMouseWheelMoved (delta)</a></td>
+	<td class="summary">Called when the mouse wheel is moved</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onGamepadConnected">AB.onGamepadConnected (index)</a></td>
+	<td class="summary">Called when a gamepad is connected</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onGamepadDisonnected">AB.onGamepadDisonnected (index)</a></td>
+	<td class="summary">Called when a gamepad is disconnected</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onGamepadPressed">AB.onGamepadPressed (index, button)</a></td>
+	<td class="summary">Called when a gamedpad button is pressed</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onGamepadReleased">AB.onGamepadReleased (index, button)</a></td>
+	<td class="summary">Called when a gamepad button is released</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.onGamepadAxisMoved">AB.onGamepadAxisMoved (index, axis, position)</a></td>
+	<td class="summary">Called when a gamepad axis is moved</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "AB.loadConfig"></a>
+    <strong>AB.loadConfig ()</strong>
+    </dt>
+    <dd>
+    Load configuration.  Called before window and renderer are created.
+ This should set a global table:
+	videoConfig = {
+		title,
+		xRes,
+		yRes,
+		fullscreen,
+		vsync
+	}
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.init"></a>
+    <strong>AB.init ()</strong>
+    </dt>
+    <dd>
+    Called once before the main loop is entered.
+ All subsystems are guaranteed to be stood up.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.update"></a>
+    <strong>AB.update ()</strong>
+    </dt>
+    <dd>
+    Updates logic.  Called 60 times a second.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.render"></a>
+    <strong>AB.render ()</strong>
+    </dt>
+    <dd>
+    Renders graphics
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.onToggleFullscreen"></a>
+    <strong>AB.onToggleFullscreen ()</strong>
+    </dt>
+    <dd>
+    Called when fullscreen mode is toggled
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.onFocusLost"></a>
+    <strong>AB.onFocusLost ()</strong>
+    </dt>
+    <dd>
+    Called when application focus is lost
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.onFocusGained"></a>
+    <strong>AB.onFocusGained ()</strong>
+    </dt>
+    <dd>
+    Called when application focus is gained
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.onWindowClose"></a>
+    <strong>AB.onWindowClose ()</strong>
+    </dt>
+    <dd>
+    Called when application window is closed
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.onKeyPressed"></a>
+    <strong>AB.onKeyPressed (key)</strong>
+    </dt>
+    <dd>
+    Called when a key is pressed
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+         Scancode of key
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/input.html#scanCodes">input.scanCodes</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "AB.onKeyReleased"></a>
+    <strong>AB.onKeyReleased (key)</strong>
+    </dt>
+    <dd>
+    Called when a key is released
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+         Scancode of key
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/input.html#scanCodes">input.scanCodes</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "AB.onBackPressed"></a>
+    <strong>AB.onBackPressed ()</strong>
+    </dt>
+    <dd>
+    Called when back is pressed on mobile (or Esc on desktop/web)
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.onTouchPressed"></a>
+    <strong>AB.onTouchPressed (index, x, y)</strong>
+    </dt>
+    <dd>
+    Called when screen is touched on mobile
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         The touch index for multi-touch
+        </li>
+        <li><span class="parameter">x</span>
+         X-coordinate
+        </li>
+        <li><span class="parameter">y</span>
+         Y-coordinate
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.onTouchReleased"></a>
+    <strong>AB.onTouchReleased (index, x, y)</strong>
+    </dt>
+    <dd>
+    Called when screen is released on mobile
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         The touch index for multi-touch
+        </li>
+        <li><span class="parameter">x</span>
+         X-coordinate
+        </li>
+        <li><span class="parameter">y</span>
+         Y-coordinate
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.onTouchMoved"></a>
+    <strong>AB.onTouchMoved (index, x, y)</strong>
+    </dt>
+    <dd>
+    Called when a screen press is moved on mobile
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         The touch index for multi-touch
+        </li>
+        <li><span class="parameter">x</span>
+         X-coordinate
+        </li>
+        <li><span class="parameter">y</span>
+         Y-coordinate
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.onMousePressed"></a>
+    <strong>AB.onMousePressed (index, x, y)</strong>
+    </dt>
+    <dd>
+    Called when a mouse button is pressed
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         Button index
+        </li>
+        <li><span class="parameter">x</span>
+         X-coordinate
+        </li>
+        <li><span class="parameter">y</span>
+         Y-coordinate
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.onMouseReleased"></a>
+    <strong>AB.onMouseReleased (index, x, y)</strong>
+    </dt>
+    <dd>
+    Called when a mouse button is released
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         Button index
+        </li>
+        <li><span class="parameter">x</span>
+         X-coordinate
+        </li>
+        <li><span class="parameter">y</span>
+         Y-coordinate
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.onMouseMoved"></a>
+    <strong>AB.onMouseMoved (x, y)</strong>
+    </dt>
+    <dd>
+    Called when the mouse is moved
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+         X-coordinate
+        </li>
+        <li><span class="parameter">y</span>
+         Y-coordinate
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.onMouseWheelMoved"></a>
+    <strong>AB.onMouseWheelMoved (delta)</strong>
+    </dt>
+    <dd>
+    Called when the mouse wheel is moved
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">delta</span>
+         Move amount
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.onGamepadConnected"></a>
+    <strong>AB.onGamepadConnected (index)</strong>
+    </dt>
+    <dd>
+    Called when a gamepad is connected
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         Gamepad index
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.onGamepadDisonnected"></a>
+    <strong>AB.onGamepadDisonnected (index)</strong>
+    </dt>
+    <dd>
+    Called when a gamepad is disconnected
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         Gamepad index
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.onGamepadPressed"></a>
+    <strong>AB.onGamepadPressed (index, button)</strong>
+    </dt>
+    <dd>
+    Called when a gamedpad button is pressed
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         Gamepad index
+        </li>
+        <li><span class="parameter">button</span>
+         Button index
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/input.html#gamepadButtons">input.gamepadButtons</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "AB.onGamepadReleased"></a>
+    <strong>AB.onGamepadReleased (index, button)</strong>
+    </dt>
+    <dd>
+    Called when a gamepad button is released
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         Gamepad index
+        </li>
+        <li><span class="parameter">button</span>
+         Button index
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/input.html#gamepadButtons">input.gamepadButtons</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "AB.onGamepadAxisMoved"></a>
+    <strong>AB.onGamepadAxisMoved (index, axis, position)</strong>
+    </dt>
+    <dd>
+    Called when a gamepad axis is moved
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         Gamepad index
+        </li>
+        <li><span class="parameter">axis</span>
+         Axis that was moved
+        </li>
+        <li><span class="parameter">position</span>
+         Axis position
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/input.html#gamepadAxes">input.gamepadAxes</a>
+    </ul>
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2022-07-09 15:15:59 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

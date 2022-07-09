@@ -1,0 +1,989 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Mustard Engine</h1>
+
+<ul>
+  <li><a href="../index.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Tables">Tables</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><a href="../modules/audio.html">audio</a></li>
+  <li><a href="../modules/callbacks.html">callbacks</a></li>
+  <li><a href="../modules/collision.html">collision</a></li>
+  <li><a href="../modules/font.html">font</a></li>
+  <li><strong>graphics</strong></li>
+  <li><a href="../modules/input.html">input</a></li>
+  <li><a href="../modules/localization.html">localization</a></li>
+  <li><a href="../modules/math.html">math</a></li>
+  <li><a href="../modules/system.html">system</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>graphics</code></h1>
+<p>Graphics state and rendering</p>
+<p></p>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.resetVideo">AB.graphics.resetVideo ()</a></td>
+	<td class="summary">Sets the video mode.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.getDesktopResolution">AB.graphics.getDesktopResolution ()</a></td>
+	<td class="summary">Gets desktop resolution</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.clear">AB.graphics.clear (r, g, b, a)</a></td>
+	<td class="summary">Clears the screen or current canvas</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.loadSprite">AB.graphics.loadSprite (filename, collisionMask, index)</a></td>
+	<td class="summary">Loads a sprite</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.loadAtlas">AB.graphics.loadAtlas (filename, width, height, collisionMask, index)</a></td>
+	<td class="summary">Loads a series of sprites from a spritesheet</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.addToAtlas">AB.graphics.addToAtlas (index)</a></td>
+	<td class="summary">Adds a sprite into the current atlas queue.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.buildAtlas">AB.graphics.buildAtlas ()</a></td>
+	<td class="summary">Builds a sprite atlas.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.renderSprite">AB.graphics.renderSprite (layer, index, x, y, z, angle, scaleX, scaleY)</a></td>
+	<td class="summary">Queues a sprite to be renderer on the screen or current canvas.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.spriteSize">AB.graphics.spriteSize (index)</a></td>
+	<td class="summary">Returns size of a sprite</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.renderQuad">AB.graphics.renderQuad (layer, width, height, x, y, z, angle)</a></td>
+	<td class="summary">Queues a quad to be renderer on the screen or current canvas.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.renderTri">AB.graphics.renderTri (layer, x1, y1, x2, y2, x3, y3)</a></td>
+	<td class="summary">Queues a triangle to be renderer on the screen or current canvas.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.renderArc">AB.graphics.renderArc (layer, x, y, radius, angle1, angle2, segments)</a></td>
+	<td class="summary">Queues an arc to be renderer on the screen or current canvas.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.renderLines">AB.graphics.renderLines (layer, lines)</a></td>
+	<td class="summary">Renders a list of line segments</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.setColor">AB.graphics.setColor (r, g, b, opacity, additivity)</a></td>
+	<td class="summary">Sets current (premultiplied) color</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.createCanvas">AB.graphics.createCanvas (width, height, index)</a></td>
+	<td class="summary">Creates a rendering canvas.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.deleteCanvas">AB.graphics.deleteCanvas (index)</a></td>
+	<td class="summary">Deletes a canvas.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.useCanvas">AB.graphics.useCanvas (index)</a></td>
+	<td class="summary">Uses a canvas for rendering.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.renderCanvas">AB.graphics.renderCanvas (layer, index, x, y, z, angle, scaleX, scaleY)</a></td>
+	<td class="summary">Queues a canvas's texture to be renderer on the screen or another canvas.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.createLayer">AB.graphics.createLayer (index, depthSorting)</a></td>
+	<td class="summary">Creates a new rendering layer.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.removeLayer">AB.graphics.removeLayer (index)</a></td>
+	<td class="summary">Removes a rendering layer</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.addColorTransform">AB.graphics.addColorTransform (index, transform, r, g, b, a)</a></td>
+	<td class="summary">Adds a color transform for layer.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.resetColorTransforms">AB.graphics.resetColorTransforms (index)</a></td>
+	<td class="summary">Resets any color transformation for layer.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.loadShader">AB.graphics.loadShader (filename, index)</a></td>
+	<td class="summary">Loads a shader program.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.setShader">AB.graphics.setShader (layerIndex, shaderIndex)</a></td>
+	<td class="summary">Sets a layer's shader</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.setBatchShader">AB.graphics.setBatchShader (layerIndex, shaderIndex)</a></td>
+	<td class="summary">Sets a layer's batch shader</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#AB.graphics.flushGraphics">AB.graphics.flushGraphics ()</a></td>
+	<td class="summary">Performs any pending rendering operations</td>
+	</tr>
+</table>
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#colorTransforms">colorTransforms</a></td>
+	<td class="summary">Color transforms</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "AB.graphics.resetVideo"></a>
+    <strong>AB.graphics.resetVideo ()</strong>
+    </dt>
+    <dd>
+    Sets the video mode.  Only necessary upon changes to video mode. Reads a global table: videoConfig = { title, xRes, yRes, fullscreen, vsync }
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.getDesktopResolution"></a>
+    <strong>AB.graphics.getDesktopResolution ()</strong>
+    </dt>
+    <dd>
+    Gets desktop resolution
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        xRes X resolution</li>
+        <li>
+        yRes Y resolution</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.clear"></a>
+    <strong>AB.graphics.clear (r, g, b, a)</strong>
+    </dt>
+    <dd>
+    Clears the screen or current canvas
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">r</span>
+         (0.0) Red color component
+        </li>
+        <li><span class="parameter">g</span>
+         (0.0) Green color component
+        </li>
+        <li><span class="parameter">b</span>
+         (0.0) Blue color component
+        </li>
+        <li><span class="parameter">a</span>
+         (1.0) Alpha component
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.loadSprite"></a>
+    <strong>AB.graphics.loadSprite (filename, collisionMask, index)</strong>
+    </dt>
+    <dd>
+    Loads a sprite
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filename</span>
+         Filename
+        </li>
+        <li><span class="parameter">collisionMask</span>
+         (true) If a collision mask should be created
+        </li>
+        <li><span class="parameter">index</span>
+         (optional) Sprite index
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        sprite handle
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.loadAtlas"></a>
+    <strong>AB.graphics.loadAtlas (filename, width, height, collisionMask, index)</strong>
+    </dt>
+    <dd>
+    Loads a series of sprites from a spritesheet
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filename</span>
+         Filename
+        </li>
+        <li><span class="parameter">width</span>
+         Width of each sprite
+        </li>
+        <li><span class="parameter">height</span>
+         Height of each sprite
+        </li>
+        <li><span class="parameter">collisionMask</span>
+         (true) If a collision mask should be created
+        </li>
+        <li><span class="parameter">index</span>
+         (optional) First sprite index
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        first sprite handle</li>
+        <li>
+        number of sprites loaded</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.addToAtlas"></a>
+    <strong>AB.graphics.addToAtlas (index)</strong>
+    </dt>
+    <dd>
+    Adds a sprite into the current atlas queue.  This should be done at startup before any rendering occurs. Sprites that are commonly
+ used together can be batched into a single atlas to improve performance by minimizing texture switches.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         Sprite index
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.buildAtlas"></a>
+    <strong>AB.graphics.buildAtlas ()</strong>
+    </dt>
+    <dd>
+    Builds a sprite atlas.  Call this after several calls to AB.graphics.addToAtlas
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.renderSprite"></a>
+    <strong>AB.graphics.renderSprite (layer, index, x, y, z, angle, scaleX, scaleY)</strong>
+    </dt>
+    <dd>
+    Queues a sprite to be renderer on the screen or current canvas.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">layer</span>
+         Rendering layer. A default layer of 0 is provided
+        </li>
+        <li><span class="parameter">index</span>
+         Sprite index
+        </li>
+        <li><span class="parameter">x</span>
+         X position
+        </li>
+        <li><span class="parameter">y</span>
+         Y position
+        </li>
+        <li><span class="parameter">z</span>
+         (-1) Z position
+        </li>
+        <li><span class="parameter">angle</span>
+         (0) Rotation
+        </li>
+        <li><span class="parameter">scaleX</span>
+         (1) Scale X
+        </li>
+        <li><span class="parameter">scaleY</span>
+         (scaleX) Scale Y
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.spriteSize"></a>
+    <strong>AB.graphics.spriteSize (index)</strong>
+    </dt>
+    <dd>
+    Returns size of a sprite
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         Sprite index
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+        width</li>
+        <li>
+        height</li>
+    </ol>
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">width, height = AB.graphics.spriteSize(<span class="number">1</span>)</pre>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.renderQuad"></a>
+    <strong>AB.graphics.renderQuad (layer, width, height, x, y, z, angle)</strong>
+    </dt>
+    <dd>
+    Queues a quad to be renderer on the screen or current canvas.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">layer</span>
+         Rendering layer. A default layer of 0 is provided
+        </li>
+        <li><span class="parameter">width</span>
+         Width
+        </li>
+        <li><span class="parameter">height</span>
+         Height
+        </li>
+        <li><span class="parameter">x</span>
+         X position
+        </li>
+        <li><span class="parameter">y</span>
+         Y position
+        </li>
+        <li><span class="parameter">z</span>
+         (-1) Z position
+        </li>
+        <li><span class="parameter">angle</span>
+         (0) Rotation
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.renderTri"></a>
+    <strong>AB.graphics.renderTri (layer, x1, y1, x2, y2, x3, y3)</strong>
+    </dt>
+    <dd>
+    Queues a triangle to be renderer on the screen or current canvas.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">layer</span>
+         Rendering layer. A default layer of 0 is provided
+        </li>
+        <li><span class="parameter">x1</span>
+         X1 position
+        </li>
+        <li><span class="parameter">y1</span>
+         Y1 position
+        </li>
+        <li><span class="parameter">x2</span>
+         X2 position
+        </li>
+        <li><span class="parameter">y2</span>
+         Y2 position
+        </li>
+        <li><span class="parameter">x3</span>
+         X3 position
+        </li>
+        <li><span class="parameter">y3</span>
+         Y3 position
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.renderArc"></a>
+    <strong>AB.graphics.renderArc (layer, x, y, radius, angle1, angle2, segments)</strong>
+    </dt>
+    <dd>
+    Queues an arc to be renderer on the screen or current canvas.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">layer</span>
+         Rendering layer. A default layer of 0 is provided
+        </li>
+        <li><span class="parameter">x</span>
+         X position
+        </li>
+        <li><span class="parameter">y</span>
+         Y position
+        </li>
+        <li><span class="parameter">radius</span>
+         Radius
+        </li>
+        <li><span class="parameter">angle1</span>
+         Start angle in degrees
+        </li>
+        <li><span class="parameter">angle2</span>
+         End angle in degrees
+        </li>
+        <li><span class="parameter">segments</span>
+         (8) Number of arc segments
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.renderLines"></a>
+    <strong>AB.graphics.renderLines (layer, lines)</strong>
+    </dt>
+    <dd>
+    Renders a list of line segments
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">layer</span>
+         Rendering layer. A default layer of 0 is provided
+        </li>
+        <li><span class="parameter">lines</span>
+        [] array of line segment endpoints in form {x1, y1, x2, y2, ...}
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.setColor"></a>
+    <strong>AB.graphics.setColor (r, g, b, opacity, additivity)</strong>
+    </dt>
+    <dd>
+    Sets current (premultiplied) color
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">r</span>
+         (1.0) Red color component
+        </li>
+        <li><span class="parameter">g</span>
+         (1.0) Green color component
+        </li>
+        <li><span class="parameter">b</span>
+         (1.0) Blue color component
+        </li>
+        <li><span class="parameter">opacity</span>
+         (1.0) Opacity
+        </li>
+        <li><span class="parameter">additivity</span>
+         (0.0) Additivity
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.createCanvas"></a>
+    <strong>AB.graphics.createCanvas (width, height, index)</strong>
+    </dt>
+    <dd>
+    Creates a rendering canvas.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+         Width of canvas
+        </li>
+        <li><span class="parameter">height</span>
+         Height of canvas
+        </li>
+        <li><span class="parameter">index</span>
+         (optional) Handle to canvas
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        canvas handle
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.deleteCanvas"></a>
+    <strong>AB.graphics.deleteCanvas (index)</strong>
+    </dt>
+    <dd>
+    Deletes a canvas.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         Handle to canvas
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.useCanvas"></a>
+    <strong>AB.graphics.useCanvas (index)</strong>
+    </dt>
+    <dd>
+    Uses a canvas for rendering.  Pass 0 to restore default frameBuffer.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.renderCanvas"></a>
+    <strong>AB.graphics.renderCanvas (layer, index, x, y, z, angle, scaleX, scaleY)</strong>
+    </dt>
+    <dd>
+    Queues a canvas's texture to be renderer on the screen or another canvas.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">layer</span>
+         Rendering layer. A default layer of 0 is provided
+        </li>
+        <li><span class="parameter">index</span>
+         Canvas index
+        </li>
+        <li><span class="parameter">x</span>
+         X position
+        </li>
+        <li><span class="parameter">y</span>
+         Y position
+        </li>
+        <li><span class="parameter">z</span>
+         (-1) Z position
+        </li>
+        <li><span class="parameter">angle</span>
+         (0) Rotation
+        </li>
+        <li><span class="parameter">scaleX</span>
+         (1) Scale X
+        </li>
+        <li><span class="parameter">scaleY</span>
+         (scaleX) Scale Y
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.createLayer"></a>
+    <strong>AB.graphics.createLayer (index, depthSorting)</strong>
+    </dt>
+    <dd>
+    Creates a new rendering layer.  (RenderLayer internally). Layers are renderered back to front, largest indices first.
+ A default layer of 0 is provided
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         Layer index
+        </li>
+        <li><span class="parameter">depthSorting</span>
+         (false) Whether this layer needs to support depth sorting
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        layer index
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.removeLayer"></a>
+    <strong>AB.graphics.removeLayer (index)</strong>
+    </dt>
+    <dd>
+    Removes a rendering layer
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         Layer index
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.addColorTransform"></a>
+    <strong>AB.graphics.addColorTransform (index, transform, r, g, b, a)</strong>
+    </dt>
+    <dd>
+    Adds a color transform for layer.  Chained with any previous color transforms
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         Layer index
+        </li>
+        <li><span class="parameter">transform</span>
+         Color transform
+        </li>
+        <li><span class="parameter">r</span>
+         Red (will also be interpreted as theta or value)
+        </li>
+        <li><span class="parameter">g</span>
+         Green
+        </li>
+        <li><span class="parameter">b</span>
+         Blue
+        </li>
+        <li><span class="parameter">a</span>
+         Alpha
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../modules/graphics.html#colorTransforms">colorTransforms</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <li><pre class="example">AB.graphics.addColorTransform(<span class="number">0</span>, AB.graphics.colorTransforms.MULTIPLY, <span class="number">0.75</span>, <span class="number">0.25</span>, <span class="number">0.5</span>)</pre></li>
+        <li><pre class="example">AB.graphics.addColorTransform(<span class="number">0</span>, AB.graphics.colorTransforms.SATURATE, <span class="number">0.5</span>)</pre></li>
+    </ul>
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.resetColorTransforms"></a>
+    <strong>AB.graphics.resetColorTransforms (index)</strong>
+    </dt>
+    <dd>
+    Resets any color transformation for layer.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">index</span>
+         Layer index
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.loadShader"></a>
+    <strong>AB.graphics.loadShader (filename, index)</strong>
+    </dt>
+    <dd>
+    Loads a shader program.  ".vert" will be appended to the filename for the vertex shader,
+ and ".frag" will be appended for the fragment shader.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filename</span>
+         Shader filename
+        </li>
+        <li><span class="parameter">index</span>
+         Shader index
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.setShader"></a>
+    <strong>AB.graphics.setShader (layerIndex, shaderIndex)</strong>
+    </dt>
+    <dd>
+    Sets a layer's shader
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">layerIndex</span>
+         Layer index
+        </li>
+        <li><span class="parameter">shaderIndex</span>
+         Shader index
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.setBatchShader"></a>
+    <strong>AB.graphics.setBatchShader (layerIndex, shaderIndex)</strong>
+    </dt>
+    <dd>
+    Sets a layer's batch shader
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">layerIndex</span>
+         Layer index
+        </li>
+        <li><span class="parameter">shaderIndex</span>
+         Shader index
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "AB.graphics.flushGraphics"></a>
+    <strong>AB.graphics.flushGraphics ()</strong>
+    </dt>
+    <dd>
+    Performs any pending rendering operations
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "colorTransforms"></a>
+    <strong>colorTransforms</strong>
+    </dt>
+    <dd>
+    Color transforms
+
+
+    <h3>Fields:</h3>
+    <ul>
+        <li><span class="parameter">NONE</span>
+         ()
+        </li>
+        <li><span class="parameter">INVERT</span>
+         ()
+        </li>
+        <li><span class="parameter">MULTIPLY</span>
+         (r, g, b)
+        </li>
+        <li><span class="parameter">SCREEN</span>
+         (r, g, b)
+        </li>
+        <li><span class="parameter">COLOR_FILL</span>
+         (r, g, b, a)
+        </li>
+        <li><span class="parameter">LINEAR_DODGE</span>
+         (r, g, b)
+        </li>
+        <li><span class="parameter">LINEAR_BURN</span>
+         (r, g, b)
+        </li>
+        <li><span class="parameter">COLOR_DODGE</span>
+         (r, g, b)
+        </li>
+        <li><span class="parameter">COLOR_BURN</span>
+         (r, g, b)
+        </li>
+        <li><span class="parameter">TINTED_MONOCHROME</span>
+         (r, g, b, a)
+        </li>
+        <li><span class="parameter">HUE_SHIFT</span>
+         (theta)
+        </li>
+        <li><span class="parameter">SATURATE</span>
+         (value)
+        </li>
+        <li><span class="parameter">BRIGHTNESS</span>
+         (value)
+        </li>
+        <li><span class="parameter">DARKNESS</span>
+         (value)
+        </li>
+        <li><span class="parameter">CONTRAST</span>
+         (value)
+        </li>
+        <li><span class="parameter">SWAP_R_G</span>
+         ()
+        </li>
+        <li><span class="parameter">SWAP_R_B</span>
+         ()
+        </li>
+        <li><span class="parameter">SWAP_G_B</span>
+         ()
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2022-07-09 15:15:59 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
