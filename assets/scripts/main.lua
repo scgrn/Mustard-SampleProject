@@ -8,6 +8,8 @@
 ]]
 
 -- globals!
+FULLSCREEN = false
+
 CANVAS_WIDTH = 800
 CANVAS_HEIGHT = 480
 CANVAS_CENTER_X = CANVAS_WIDTH / 2
@@ -31,6 +33,24 @@ function AB.loadConfig()
 		fullscreen = false,
 		vsync = true,
 	}
+	
+	if (FULLSCREEN) then
+		videoConfig.xRes, videoConfig.yRes = AB.graphics.getDesktopResolution()
+		videoConfig.fullscreen = true
+		
+		local xScale = videoConfig.xRes / CANVAS_WIDTH
+		local yScale = videoConfig.yRes / CANVAS_HEIGHT
+		videoConfig.scale = math.min(xScale, yScale)
+	else
+		videoConfig.xRes = CANVAS_WIDTH
+		videoConfig.yRes = CANVAS_HEIGHT
+		videoConfig.fullscreen = false
+		
+		videoConfig.scale = 1
+	end
+
+	videoConfig.xOffset = (videoConfig.xRes - (CANVAS_WIDTH * videoConfig.scale)) / 2.0
+	videoConfig.yOffset = (videoConfig.yRes - (CANVAS_HEIGHT * videoConfig.scale)) / 2.0	
 end
 
 --	called once after all engine subsystems have been initialized and we're ready to run.
@@ -120,7 +140,9 @@ function AB.render()
 	
 	AB.graphics.setColor()
 	AB.graphics.useCanvas(0)
-	AB.graphics.renderCanvas(layers.DEFAULT, canvas, CANVAS_CENTER_X, CANVAS_CENTER_Y, -1, 0)
+	--AB.graphics.renderCanvas(layers.DEFAULT, canvas, CANVAS_CENTER_X, CANVAS_CENTER_Y, -1, 0)
+
+	AB.graphics.renderCanvas(layers.DEFAULT, canvas, videoConfig.xRes / 2, videoConfig.yRes / 2, -1, 0, videoConfig.scale)
 end
 
 -- you can optionally implement other callback functions
