@@ -75,10 +75,12 @@ function Player:update()
 		self.vel.y = self.vel.y + 1
 	end
 	
-	self.vel.x = self.vel.x + (AB.input.gamepadGetAxis(AB.input.gamepadAxes.LEFT_X) * MOVE_SPEED)
-	self.vel.y = self.vel.y + (AB.input.gamepadGetAxis(AB.input.gamepadAxes.LEFT_Y) * MOVE_SPEED)
+	self.vel.x = self.vel.x + AB.input.gamepadGetAxis(AB.input.gamepadAxes.LEFT_X)
+	self.vel.y = self.vel.y + AB.input.gamepadGetAxis(AB.input.gamepadAxes.LEFT_Y)
 
-	self.vel:normalize()
+	if (self.vel:magnitude() > 1) then
+		self.vel:normalize()
+	end
 	self.vel = self.vel * MOVE_SPEED
 	
 	self.pos = self.pos + self.vel
