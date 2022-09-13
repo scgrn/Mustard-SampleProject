@@ -140,7 +140,6 @@ function AB.render()
 	
 	AB.graphics.setColor()
 	AB.graphics.useCanvas(0)
-	--AB.graphics.renderCanvas(layers.DEFAULT, canvas, CANVAS_CENTER_X, CANVAS_CENTER_Y, -1, 0)
 
 	AB.graphics.renderCanvas(layers.DEFAULT, canvas, videoConfig.xRes / 2, videoConfig.yRes / 2, -1, 0, videoConfig.scale)
 end
