@@ -1,7 +1,7 @@
 # Mustard Engine Sample Project
 Mustard engine debug runtime with sample game.
 
-Minimal setup for building Lua scripted games on/for 64 bit Windows with the [https://github.com/scgrn/Mustard-Engine](Mustard engine).
+Minimal setup for building Lua scripted games on/for 64 bit Windows with the [Mustard engine](github.com/scgrn/Mustard-Engine).
 ## Usage:
 Fork the repo
 
