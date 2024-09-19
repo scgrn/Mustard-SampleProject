@@ -93,7 +93,7 @@ function AB.init()
 		PLAYER_SPLODE = AB.audio.loadSound("sfx/playerSplode.wav")
 	}
 	
-	music = AB.audio.loadMusic("music/musicLoop.ogg", 4, 150)
+	music = AB.audio.loadMusic("music/musicLoop.mp3", 4, 150)
 	AB.audio.playMusic(music)
 
 	font = AB.font.loadFont("default3")
